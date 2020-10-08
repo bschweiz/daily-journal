@@ -3,13 +3,39 @@
     <head>
         <meta charset="utf-8">
         <title>BSCHWEIZ DAILY JOURNAL</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/main.css">
     </head>
 
     <body>
+        <header>
+            <h1>My Learning Log</h1>
+        </header>
         <main id="container">
-            <section>
+            <section class="daily-entry-box box">
+                <div class="date-and-topics horiz-box">
+                    <div class="current-date box"><h3>Enter Today's Date:</h3>
+                        <!-- date selector box -->
+                    </div>
+                    <div class="topics-covered box"><h3>Topics Covered:</h3>
+                        <!-- topics covered input box -->
+                    </div>
+                </div>
+                <div class="journal-entry box"> <h2>Write your experiences here:</h2>
+                    <!-- text input  box -->
+                    <form class="input-field box">text input field                                      
 
+                    </form>
+                </div>
+                <div class="mood-and-submit-button horiz-box">
+                    <div class="mood-selector box"><h3>My Mood:</h3>
+                        <!-- pick from a list-->
+                    </div>
+                    <div class="submit-button box">
+                        <button><h3>click here to submit your journal entry</h3></button>
+                        <!-- topics covered input box -->
+                    </div>
+                </div>
             </section>
             
         </main>
