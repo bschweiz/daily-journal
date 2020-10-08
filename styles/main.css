@@ -11,9 +11,42 @@ textarea {
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+	background-color: #9DE0AD;
+	text-align: center;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+  color: #547980;
 }
+
+h1 {
+	color: #45ADA8;
+}
+
+section {
+	border: solid #404040;
+	padding: 5px;
+}
+
+.box {
+	border: solid #E5FCC2;
+	flex-grow: 100;
+	min-height: 4em;
+}
+
+.horiz-box {
+	border: solid #547980;
+	display: flex;
+	margin: 2px;
+	min-height: 4em;
+}
+
+.journal-entry {
+	background-color: #45ADA8 ;
+}
+
+/* COLOR PALLETTE:
+E5FCC2   9DE0AD   45ADA8   547980   594F4F
+  */
