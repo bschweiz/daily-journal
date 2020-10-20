@@ -13,7 +13,7 @@
         </header>
         <main id="container">
             <section class="daily-entry-box box">
-                <div class="date-and-topics horiz-box">
+                <div class="date-and-topics horiz-box" id="date-and-topics-enclosing">
                     <div class="current-date box">
                         <h3>Enter Today's Date:</h3> 
                         <!-- date selector box -->
@@ -24,19 +24,38 @@
                             </fieldset>
                         </form>
                     </div>
-                    <div class="topics-covered box"><h3>Topics Covered:</h3>
+                    <div class="topics-covered box">
+                        <h3>Topics Covered:</h3>
+                        <form action="">
                         <!-- topics covered input box -->
+                            <fieldset>
+                                <label for="topicsCovered"></label>
+                                <input type="text" name="topicsCovered" id="topicsCovered">
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
-                <div class="journal-entry box"> <h2>Write your experiences here:</h2>
+                <div class="box"> <h2>Write your experiences here:</h2>
                     <!-- text input  box -->
-                    <form class="input-field box">text input field                                      
-
+                    <form action="">                                    
+                        <label for="journalEntry"></label>
+                        <textarea class="journal-entry box" placeholder="write today's thoughts here..."></textarea> 
+                            <!-- <input type="text" name="journalEntry" id="journalEntry"> -->
                     </form>
                 </div>
-                <div class="mood-and-submit-button horiz-box">
+                <div class="mood-and-submit-button horiz-box" id="mood-and-submit-enclosing">
                     <div class="mood-selector box"><h3>My Mood:</h3>
                         <!-- pick from a list-->
+                        <label for="moodSelector">Today I felt</label>
+                        <select name="moods" id="moodlist">
+                            <option>tired</option>
+                            <option>focused</option>
+                            <option>stressed</option>
+                            <option>sleepy</option>
+                            <option>content</option>
+                            <option>motivated</option>
+                            <option>drowsy</option>
+                        </select>
                     </div>
                     <div class="submit-button box">
                         <button><h3>click here to submit your journal entry</h3></button>

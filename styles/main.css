@@ -3,10 +3,8 @@
 /*Typography
 --------------------------------------------------------------*/
 body,
-button,
-input,
-select,
 textarea {
+
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
@@ -15,7 +13,27 @@ textarea {
 	text-align: center;
 }
 
-h1,h2,h3,h4,h5,h6 {
+form,
+input,
+select {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	background-color: #9DE0AD;
+	text-align: center;
+	border-radius: 5px;
+}
+
+button {
+	border-radius: 5px;
+	display: flex;
+	align-items : center;
+	justify-content: center;
+	background-color: #45ADA8 ;
+}
+
+h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
   color: #547980;
@@ -25,9 +43,27 @@ h1 {
 	color: #45ADA8;
 }
 
+button {
+	border-radius: 5px;
+	display: flex;
+	align-items : center;
+	justify-content: center;
+	background-color: #45ADA8 ;
+}
+
 section {
 	border: solid #404040;
 	padding: 5px;
+}
+
+#date-and-topics-enclosing {
+	display: flex;
+	flex-wrap: wrap;
+} 
+
+#mood-and-submit-enclosing {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .box {
@@ -35,16 +71,33 @@ section {
 	flex-grow: 100;
 	min-height: 4em;
 }
-
+	
 .horiz-box {
-	border: solid #547980;
-	display: flex;
-	margin: 2px;
-	min-height: 4em;
+		border: solid #547980;
+		display: flex;
+		margin: 2px;
+		min-height: 4em;
 }
-
+	
 .journal-entry {
-	background-color: #45ADA8 ;
+		background-color: #45ADA8 ;
+		height: 400px;
+		width: 80%;
+		margin-bottom: 65px;
+		border-radius: 5px;
+}
+	
+	
+.mood-selector {
+		height: 105px;
+}
+	
+.submit-button {
+	border-radius: 5px;
+	display: flex;
+	align-items : center;
+	justify-content: center;
+	
 }
 
 .input-field {
