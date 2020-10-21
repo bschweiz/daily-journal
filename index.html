@@ -9,39 +9,34 @@
 
     <body>
         <header>
-            <h1>My Learning Log</h1>
+            <h1>Neuroplasticity Logbook</h1>
         </header>
         <main id="container">
             <section class="daily-entry-box box">
+                <form>
                 <div class="date-and-topics horiz-box" id="date-and-topics-enclosing">
                     <div class="current-date box">
                         <h3>Enter Today's Date:</h3> 
                         <!-- date selector box -->
-                        <form action="">
                             <fieldset>
                                 <label for="journalDate"></label>
                                 <input type="date" name="journalDate" id="journalDate">
                             </fieldset>
-                        </form>
                     </div>
                     <div class="topics-covered box">
                         <h3>Topics Covered:</h3>
-                        <form action="">
                         <!-- topics covered input box -->
                             <fieldset>
                                 <label for="topicsCovered"></label>
                                 <input type="text" name="topicsCovered" id="topicsCovered">
                             </fieldset>
-                        </form>
                     </div>
                 </div>
                 <div class="box"> <h2>Write your experiences here:</h2>
-                    <!-- text input  box -->
-                    <form action="">                                    
+                    <!-- text input  box -->                                  
                         <label for="journalEntry"></label>
                         <textarea class="journal-entry box" placeholder="write today's thoughts here..."></textarea> 
-                            <!-- <input type="text" name="journalEntry" id="journalEntry"> -->
-                    </form>
+                            <!-- <input type="text" name="journalEntry" id="journalEntry"> -->                   
                 </div>
                 <div class="mood-and-submit-button horiz-box" id="mood-and-submit-enclosing">
                     <div class="mood-selector box"><h3>My Mood:</h3>
@@ -62,6 +57,7 @@
                         <!-- topics covered input box -->
                     </div>
                 </div>
+                </form>
             </section>
             
         </main>
