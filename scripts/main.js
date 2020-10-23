@@ -1,6 +1,7 @@
-import { useJournalEntries } from "./JournalDataProvider.js";
+import { getJournalEntries } from "./JournalDataProvider.js";
 
 console.log("Welcome to Da Main Module");
  
-const test1 = useJournalEntries();
-console.log(test1);
+
+
+getJournalEntries();
