@@ -4,18 +4,20 @@
 --------------------------------------------------------------*/
 body,
 textarea {
-
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	background-color: #9DE0AD;
 	text-align: center;
+	align-content: center;
 }
 
-form,
+fieldset,
 input,
-select {
+label,
+select, {
+	display: flex;
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
@@ -23,6 +25,8 @@ select {
 	background-color: #9DE0AD;
 	text-align: center;
 	border-radius: 5px;
+	margin: .5em;
+	flex-grow: 100%
 }
 
 button {
@@ -34,9 +38,10 @@ button {
 }
 
 h2,h3,h4,h5,h6 {
-  font-family: "Patua One", serif;
-  letter-spacing: 2px;
-  color: #547980;
+	font-family: "Patua One", serif;
+	letter-spacing: 2px;
+	color: #547980;
+	
 }
 
 h1 {
@@ -51,56 +56,80 @@ button {
 	background-color: #45ADA8 ;
 }
 
-section {
+section.daily-entry-box {
 	border: solid #404040;
 	padding: 5px;
+	display: flex;
 }
 
 #date-and-topics-enclosing {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-evenly;
+	flex-grow: 100%;
+
+
+
 } 
 
 #mood-and-submit-enclosing {
-	display: flex;
+	
 	flex-wrap: wrap;
+	justify-content: space-evenly;
+	flex-grow: 100%;
 }
 
 .box {
 	border: solid #E5FCC2;
-	flex-grow: 100;
 	min-height: 4em;
+	flex-grow: 100%;
+	/* display: flex; */
+	align-content: center;
 }
-	
-.horiz-box {
-		border: solid #547980;
-		display: flex;
-		margin: 2px;
-		min-height: 4em;
+
+.current-date.box,
+.topics-covered.box,
+.note {
+	flex-grow: 100%;
+}	
+
+.daily-entry-box {
+	/* display: flex; */
 }
-	
+
+.horiz-box,
+.formTarget {
+	border: solid #547980;
+	display: flex;
+	margin: 2px;
+	min-height: 4em;
+	flex-grow: 100%;
+}
+
 .journal-entry {
-		background-color: #45ADA8 ;
-		height: 400px;
-		width: 80%;
-		margin-bottom: 65px;
-		border-radius: 5px;
+	background-color: #45ADA8 ;
+	height: 400px;
+	width: 80%;
+	margin-bottom: 65px;
+	border-radius: 5px;
 }
-	
-	
-.mood-selector {
-		height: 105px;
+
+
+.mood-selector.box {
+	height: 105px;
+	flex-grow: 100%;
 }
-	
-.submit-button {
+
+.submit-button.box {
 	border-radius: 5px;
 	display: flex;
 	align-items : center;
 	justify-content: center;
-	
+	flex-grow: 100%;
 }
 
 .input-field {
+	flex-grow: 100%;
 	min-height: 8em;
 	background-color: beige;
 }

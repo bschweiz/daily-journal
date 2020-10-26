@@ -1,32 +1,17 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>BSCHWEIZ DAILY JOURNAL</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./styles/main.css">
-    </head>
 
-    <body>
-        <header>
-            <h1>Neuroplasticity Logbook</h1>
-        </header>
-        <main id="container">
-            <div class="formTarget">
-            </div>
-            <section class="past-entries">
-                <!-- insert live updated entries here -->
-            </section>
-        </main>
-        <footer>
-
-        </footer>
-        <script type="module" src="./scripts/main.js"></script>
-    </body>
-</html>
+const contentTarget = document.querySelector(".formTarget")
+const eventHub = document.querySelector(".container")
 
 
-    <!-- <div class="date-and-topics horiz-box" id="date-and-topics-enclosing">
+export const JournalFormComponent = () => {
+    render ()
+}
+
+const render = () => {
+    contentTarget.innerHTML = `
+    <form>
+    <section class="daily-entry-box">
+    <div class="horiz-box" id="date-and-topics-enclosing">
         <div class="current-date box">
             <h3>Enter Today's Date:</h3> 
     
@@ -49,7 +34,7 @@
         <label for="journalEntry"></label>
         <textarea class="journal-entry box" placeholder="write today's thoughts here..."></textarea> 
     
-    <div class="mood-and-submit-button horiz-box" id="mood-and-submit-enclosing">
+    <div class="horiz-box" id="mood-and-submit-enclosing">
         <div class="mood-selector box">
             <h3>My Mood:</h3>
     
@@ -67,8 +52,10 @@
         <div class="submit-button box">
             <button><h3>click here to submit your journal entry</h3></button>
         </div>
-    </div> -->
-    
-    
-    
-    
+    </div>
+    </section>    
+    </form>
+    `
+}
+
+// eventHub.addEventListener("noteStateChanged", () => NoteForm());
