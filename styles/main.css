@@ -2,7 +2,19 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body,
+body {
+	display: flex;
+	flex-direction: column;
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	background-color: #9DE0AD;
+	text-align: center;
+	align-content: center;
+	flex-grow: 100%
+}
+
 textarea {
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
@@ -11,12 +23,27 @@ textarea {
 	background-color: #9DE0AD;
 	text-align: center;
 	align-content: center;
+	flex-grow: 100%
+}
+
+form,
+.horiz-box {
+	display: flex;
+	align-items: center;
+}
+
+.daily-entry-box,
+.formTarget {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	flex-direction: column;
 }
 
 fieldset,
 input,
 label,
-select, {
+select {
 	display: flex;
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
@@ -41,11 +68,13 @@ h2,h3,h4,h5,h6 {
 	font-family: "Patua One", serif;
 	letter-spacing: 2px;
 	color: #547980;
+	flex-grow: 100%
 	
 }
 
 h1 {
 	color: #45ADA8;
+	flex-grow: 100%
 }
 
 button {
@@ -55,12 +84,13 @@ button {
 	justify-content: center;
 	background-color: #45ADA8 ;
 }
-
-section.daily-entry-box {
+/* 
+.daily-entry-box {
 	border: solid #404040;
 	padding: 5px;
-	display: flex;
-}
+	flex-grow: 100%;
+	
+} */
 
 #date-and-topics-enclosing {
 	display: flex;
@@ -83,12 +113,11 @@ section.daily-entry-box {
 	border: solid #E5FCC2;
 	min-height: 4em;
 	flex-grow: 100%;
-	/* display: flex; */
+	display: flex;
 	align-content: center;
 }
 
-.current-date.box,
-.topics-covered.box,
+
 .note {
 	flex-grow: 100%;
 }	
@@ -97,8 +126,7 @@ section.daily-entry-box {
 	/* display: flex; */
 }
 
-.horiz-box,
-.formTarget {
+.horiz-box {
 	border: solid #547980;
 	display: flex;
 	margin: 2px;
@@ -109,15 +137,17 @@ section.daily-entry-box {
 .journal-entry {
 	background-color: #45ADA8 ;
 	height: 400px;
-	width: 80%;
+	flex-grow: 80%;
 	margin-bottom: 65px;
 	border-radius: 5px;
+	align-content: center;
 }
 
 
 .mood-selector.box {
 	height: 105px;
 	flex-grow: 100%;
+	flex-direction: column;
 }
 
 .submit-button.box {
