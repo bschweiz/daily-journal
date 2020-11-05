@@ -1,0 +1,53 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "date": "07/24/2020",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "mood": "Ok"
+    },
+    {
+      "id": 2,
+      "date": "07/25/2020",
+      "concept": "Flexbox Layouts in CSS",
+      "entry": "Learned about the different ways Flexbox can be used to style elements on the page, played a froggy game for practice.",
+      "mood": "Tired"
+    },
+    {
+      "id": 3,
+      "date": "07/26/2020",
+      "concept": "DOM",
+      "entry": "Learned about the Document Object Model.",
+      "mood": "Restless"
+    },
+    {
+      "id": 4,
+      "date": "07/27/2020",
+      "concept": "Javascript",
+      "entry": "We learned some basic functions in java script, practiced some if/else statements, learned about console logging.",
+      "mood": "Sleepy"
+    },
+    {
+      "concept": "API posts",
+      "date": "2020-11-05",
+      "entry": "testing to see if i can upload new journal entries",
+      "mood": "motivated",
+      "id": 5
+    },
+    {
+      "concept": "APIs part 2",
+      "date": "2020-11-05",
+      "entry": "hellooooooo",
+      "mood": "tired",
+      "id": 6
+    },
+    {
+      "concept": "API session 3",
+      "date": "2020-11-05",
+      "entry": "gotta make the input fields refresh",
+      "mood": "tired",
+      "id": 7
+    }
+  ]
+}

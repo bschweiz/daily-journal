@@ -5,46 +5,64 @@
  *      functions that other modules can use to filter
  *      the entries for different purposes.
  */
-
-const journal = [
-    {
-        id: 1,
-        date: "07/24/2020",
-        concept: "HTML & CSS",
-        entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-        mood: "Ok"
-    },
-    {
-        id: 2,
-        date: "07/25/2020",
-        concept: "Flexbox Layouts in CSS",
-        entry: "Learned about the different ways Flexbox can be used to style elements on the page, played a froggy game for practice.",
-        mood: "Tired"
-    },
-    {
-        id: 3,
-        date: "07/26/2020",
-        concept: "DOM",
-        entry: "Learned about the Document Object Model.",
-        mood: "Restless"
-    },
-    {
-        id: 4,
-        date: "07/27/2020",
-        concept: "Javascript",
-        entry: "We learned some basic functions in java script, practiced some if/else statements, learned about console logging.",
-        mood: "Sleepy"
-    },
-   
-
-]
+const eventHub = document.querySelector("#container")
 /*
     You export a function that provides a version of the
     raw data in the format that you want
 */
-export const useJournalEntries = () => {
-    const sortedByDate = journal.sort(currentEntry, nextEntry) => 
-        Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-   )
-    return sortedByDate
+let entriesArray = []
+// sortedByDate = journalArray.sort()
+// return sortedByDate
+
+export const getJournalEntries = () => {
+    return fetch("http://localhost:8088/entries") // Fetch from the API
+    .then(response => response.json())  // Parse as JSON
+    .then(updatedEntries => {
+        entriesArray = updatedEntries
+        // What should happen when we finally have the array?
+        console.log(entriesArray);
+    })
 }
+
+export const useJournalEntries = () => {
+    return entriesArray.slice()
+}
+
+export const saveEntry = entry => {
+    return fetch('http://localhost:8088/entries', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(getJournalEntries)
+    .then(dispatchStateChangeEvent)
+}
+
+// Handle browser-generated click event in component
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "saveButton") {
+        const concept = document.getElementById("topicsCovered").value
+        const date = document.getElementById("journalDate").value
+        const entry = document.getElementById("entryText").value
+        const mood = document.getElementById("moodlist").value
+        // Make a new object representation of a note
+        const newEntry = {
+            concept,
+            date,
+            entry,
+            mood,
+            // Key/value pairs here
+        }
+        // Change API state and application state
+        saveEntry(newEntry)
+    }
+        
+})
+
+const dispatchStateChangeEvent = () => {
+    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+
+    eventHub.dispatchEvent(noteStateChangedEvent)
+} 
