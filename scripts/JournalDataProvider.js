@@ -5,7 +5,7 @@
  *      functions that other modules can use to filter
  *      the entries for different purposes.
  */
-
+const eventHub = document.querySelector("#container")
 /*
     You export a function that provides a version of the
     raw data in the format that you want
@@ -27,3 +27,42 @@ export const getJournalEntries = () => {
 export const useJournalEntries = () => {
     return entriesArray.slice()
 }
+
+export const saveEntry = entry => {
+    return fetch('http://localhost:8088/entries', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(getJournalEntries)
+    .then(dispatchStateChangeEvent)
+}
+
+// Handle browser-generated click event in component
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "saveButton") {
+        const concept = document.getElementById("topicsCovered").value
+        const date = document.getElementById("journalDate").value
+        const entry = document.getElementById("entryText").value
+        const mood = document.getElementById("moodlist").value
+        // Make a new object representation of a note
+        const newEntry = {
+            concept,
+            date,
+            entry,
+            mood,
+            // Key/value pairs here
+        }
+        // Change API state and application state
+        saveEntry(newEntry)
+    }
+        
+})
+
+const dispatchStateChangeEvent = () => {
+    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+
+    eventHub.dispatchEvent(noteStateChangedEvent)
+} 

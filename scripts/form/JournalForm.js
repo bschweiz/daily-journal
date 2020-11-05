@@ -1,16 +1,16 @@
 
 const contentTarget = document.querySelector(".formTarget")
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector("#container")
 
 
 export const JournalFormComponent = () => {
     render ()
 }
-
+eventHub.addEventListener("noteStateChanged", () => JournalFormComponent());
 const render = () => {
     contentTarget.innerHTML = `
     
-    <div class="daily-entry-box box">
+    <div class="daily-entry-box">
     <div class="horiz-box">
         <div class="current-date">
             <h3>Enter Today's Date:</h3> 
@@ -32,7 +32,7 @@ const render = () => {
     
         <h2>Write your experiences here:</h2>                            
             <div class="horiz-box">
-                <textarea class="journal-entry" placeholder="write today's thoughts here..."></textarea> 
+                <textarea id="entryText" class="journal-entry" placeholder="write today's thoughts here..."></textarea> 
             </div>
     <div class="horiz-box" id="mood-and-submit-enclosing">
             <div class="mood-selector">
@@ -50,7 +50,7 @@ const render = () => {
                     </select>
             </div>
             <div class="submit-button box">
-                <button><h3>click here to submit your journal entry</h3></button>
+                <button id="saveButton"><h3>click here to submit your journal entry</h3></button>
             </div>
     </div>
     </div>    

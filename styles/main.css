@@ -23,7 +23,8 @@ textarea {
 	background-color: #9DE0AD;
 	text-align: center;
 	align-content: center;
-	flex-grow: 100%
+	min-width: 50%;
+	margin-top: 2em;
 }
 
 form,
@@ -32,9 +33,9 @@ form,
 	align-items: center;
 }
 
-.daily-entry-box,
+
 .formTarget {
-	display: flex;
+	
 	align-items: center;
 	align-content: center;
 	flex-direction: column;
@@ -84,22 +85,12 @@ button {
 	justify-content: center;
 	background-color: #45ADA8 ;
 }
-/* 
-.daily-entry-box {
-	border: solid #404040;
-	padding: 5px;
-	flex-grow: 100%;
-	
-} */
 
 #date-and-topics-enclosing {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	flex-grow: 100%;
-
-
-
 } 
 
 #mood-and-submit-enclosing {
@@ -113,18 +104,13 @@ button {
 	border: solid #E5FCC2;
 	min-height: 4em;
 	flex-grow: 100%;
-	display: flex;
 	align-content: center;
+	padding: 1em;
 }
-
 
 .note {
 	flex-grow: 100%;
 }	
-
-.daily-entry-box {
-	/* display: flex; */
-}
 
 .horiz-box {
 	border: solid #547980;
@@ -132,6 +118,7 @@ button {
 	margin: 2px;
 	min-height: 4em;
 	flex-grow: 100%;
+	justify-content: space-around;
 }
 
 .journal-entry {
@@ -142,7 +129,6 @@ button {
 	border-radius: 5px;
 	align-content: center;
 }
-
 
 .mood-selector.box {
 	height: 105px;
@@ -162,6 +148,11 @@ button {
 	flex-grow: 100%;
 	min-height: 8em;
 	background-color: beige;
+}
+
+.entriesList {
+	display: flex;
+	flex-direction: column-reverse;
 }
 
 /* COLOR PALLETTE:
