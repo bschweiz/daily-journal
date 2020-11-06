@@ -1,4 +1,5 @@
 import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js"
+import { getMoods, useMoods } from './form/MoodProvider.js'
 
 const pastEntriesContainer = document.querySelector(".past-entries")
 const eventHub = document.querySelector("#container")
@@ -6,18 +7,19 @@ const eventHub = document.querySelector("#container")
 
 export const JournalList = () => {
     getJournalEntries()
-    .then(() => {
-        const allPastEntries = useJournalEntries()
-        render(allPastEntries)
-    })
+        .then(getMoods)
+        .then(() => {
+            const allPastEntries = useJournalEntries()
+            const moodArray = useMoods()
+            render(allPastEntries, moodArray)
+        })
 }
 
-const render = (rawArray) => {
-    
-    let entryHTMLRepresentations = ""
-    for (const entry of rawArray) 
-    {
-        entryHTMLRepresentations += `
+const render = (entriesArray, moodArray) => {
+    pastEntriesContainer.innerHTML = entriesArray.map(entry => {
+        const displayMood = moodArray.find(mood => mood.id === entry.moodId)
+        // console.log(displayMood) 
+        return ` 
         <div class="entryCard">
         <div class="note horiz-box">
         <div class="box">
@@ -26,21 +28,15 @@ const render = (rawArray) => {
         </div>
         <div class="box">
         <p>Thoughts: ${entry.entry}</p><br>
-        <p>Feels: ${entry.mood}</p>
+        <p>Feels: ${displayMood.moodName}</p>
         </div>
         </div>
-        </div>`
-        entry.id
-    }
-    pastEntriesContainer.innerHTML = `
-    <section class="entriesList">
-    <h3>PAST ENTRIES</h3>
-    <br>
-    
-    ${entryHTMLRepresentations}
-    
-    </section>
-    `    
+        </div>
+        `
+    }).join(" ")
 }
 
 eventHub.addEventListener("noteStateChanged", () => JournalList());
+
+
+

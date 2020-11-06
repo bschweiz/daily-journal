@@ -39,20 +39,22 @@ export const saveEntry = entry => {
     .then(getJournalEntries)
     .then(dispatchStateChangeEvent)
 }
-
+let moodChosen = 4 
+// eventHub.addEventListener("change", changeEvent)
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveButton") {
         const concept = document.getElementById("topicsCovered").value
         const date = document.getElementById("journalDate").value
         const entry = document.getElementById("entryText").value
-        const mood = document.getElementById("moodlist").value
+        const moodId = parseInt(document.getElementById("moodList").value)
+        // const moodId = moodChosen
         // Make a new object representation of a note
         const newEntry = {
             concept,
             date,
             entry,
-            mood,
+            moodId,
             // Key/value pairs here
         }
         // Change API state and application state
