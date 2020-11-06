@@ -35,13 +35,27 @@ form,
 
 
 .formTarget {
-	
+	flex-grow: 100%;
 	align-items: center;
 	align-content: center;
 	flex-direction: column;
 }
 
-fieldset,
+fieldset {
+	display: flex;
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	background-color: #9DE0AD;
+	text-align: center;
+	border-radius: 5px;
+	margin: .5em;
+	min-width: 300px;
+}
+
+
+
 input,
 label,
 select {
@@ -150,7 +164,7 @@ button {
 	background-color: beige;
 }
 
-.entriesList {
+.past-entries {
 	display: flex;
 	flex-direction: column-reverse;
 }

@@ -1,4 +1,7 @@
 
+
+import { useMoods } from "./MoodProvider.js"
+
 const contentTarget = document.querySelector(".formTarget")
 const eventHub = document.querySelector("#container")
 
@@ -7,7 +10,15 @@ export const JournalFormComponent = () => {
     render ()
 }
 eventHub.addEventListener("noteStateChanged", () => JournalFormComponent());
+
+
 const render = () => {
+    const moodArray = useMoods();
+        const dropdownHTML = moodArray.map((mood) => {
+        return `<option value="${ mood.id }">${mood.moodName}</option>`
+            })
+            .join(" ")
+
     contentTarget.innerHTML = `
     
     <div class="daily-entry-box">
@@ -39,17 +50,12 @@ const render = () => {
                 <h3>My Mood:</h3>
     
                 <h4>Today I felt</h4>
-                    <select name="moods" id="moodlist">
-                        <option>tired</option>
-                        <option>focused</option>
-                        <option>stressed</option>
-                        <option>sleepy</option>
-                        <option>content</option>
-                        <option>motivated</option>
-                        <option>drowsy</option>
+                    <select id="moodList">
+                    <option value="0">Choose a Mood...</option>`
+                    + `${dropdownHTML}` + `
                     </select>
             </div>
-            <div class="submit-button box">
+            <div 5lass="submit-button box">
                 <button id="saveButton"><h3>click here to submit your journal entry</h3></button>
             </div>
     </div>

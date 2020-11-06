@@ -1,0 +1,72 @@
+{
+  "entries": [
+    {
+      "concept": "API posts",
+      "date": "2020-11-05",
+      "entry": "testing to see if i can upload new journal entries",
+      "moodId": 3,
+      "id": 1
+    },
+    {
+      "concept": "APIs part 2",
+      "date": "2020-11-05",
+      "entry": "hellooooooo",
+      "moodId": 6,
+      "id": 2
+    },
+    {
+      "concept": "API session 3",
+      "date": "2020-11-05",
+      "entry": "gotta make the input fields refresh",
+      "moodId": 6,
+      "id": 3
+    },
+    {
+      "concept": "CRUD metods for APIs",
+      "date": "2020-11-06",
+      "entry": "bryan's presentation of his shoe website was super cool",
+      "moodId": 1,
+      "id": 4
+    },
+    {
+      "concept": "CRUD Methods incorporated into our DJ app",
+      "date": "2020-11-06",
+      "entry": "still practicing combining data from different entitities ",
+      "moodId": 1,
+      "id": 5
+    },
+    {
+      "concept": "2 Truths and a Lie",
+      "date": "2020-11-06",
+      "entry": "I think I have the whole Daily Journal site working for me now up to and including the ",
+      "moodId": 5,
+      "id": 6
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "moodName": "tired"
+    },
+    {
+      "id": 2,
+      "moodName": "restless"
+    },
+    {
+      "id": 3,
+      "moodName": "motivated"
+    },
+    {
+      "id": 4,
+      "moodName": "stressed"
+    },
+    {
+      "id": 5,
+      "moodName": "calm & content"
+    },
+    {
+      "id": 6,
+      "moodName": "drowsy"
+    }
+  ]
+}
