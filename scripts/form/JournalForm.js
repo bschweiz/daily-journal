@@ -15,7 +15,7 @@ eventHub.addEventListener("noteStateChanged", () => JournalFormComponent());
 const render = () => {
     const moodArray = useMoods();
         const dropdownHTML = moodArray.map((mood) => {
-        return `<option value="${ mood.id }">${mood.moodName}</option>`
+        return `<option value="${ mood.id }">${ mood.moodName }</option>`
             })
             .join(" ")
 
